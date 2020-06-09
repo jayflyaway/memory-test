@@ -27,6 +27,25 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Memory Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.7.7/babel.min.js"></script>
+    <script src="http://ml3.leuphana.de/game/mousetrack/js/src/load.js"></script>
+    <!-- <script>
+      (function(){
+
+        TrackUI.record({
+          // Remember to point to save.php (or similar) to write the log files.
+          debug: true,
+          // postServer: "http://ml3.leuphana.de/game/mousetrack/save.php",
+          postServer: "../src/scripts/mousetrack/save.php",
+          pollingEvents: "mousedown mouseup mousemove mouseover mouseout dblclick",
+          pollingMs: 50,
+          taskName: "index"
+        });
+
+      })();
+    </script> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -32,6 +32,8 @@ body {
   background-color: #fff;
   padding: 0px 9px;
   height: 100%;
+  min-width: 70%;
+  max-width: 1100px;
   box-shadow: #94949447 0px 0px 12px 8px;
 }
 
@@ -40,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 1050px;
+  width: 100%;
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
   padding: 5px;

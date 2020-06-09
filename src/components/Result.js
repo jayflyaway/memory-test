@@ -14,6 +14,7 @@ class Result extends Component {
   }
 
   render() {
+    this.setCookies();
     return this.renderResult();
   }
 
@@ -46,6 +47,36 @@ class Result extends Component {
     );
   }
 
+  
+  setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  setCookies(){
+    const highScore = this.getCookie('highScore');
+    this.setCookie('lastScore', this.props.score, 365);
+    if(highScore === '' || parseInt(highScore) < this.props.score) {
+      this.setCookie('highScore', this.props.score, 365);
+    }
+  }
   openModal() {
     this.setState({
       showModal: true
